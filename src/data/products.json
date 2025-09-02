@@ -1,0 +1,38 @@
+[
+  {
+    "id": "p1",
+    "name": "Quantum Phone",
+    "price": 799,
+    "category": "Gadgets"
+  },
+  {
+    "id": "p2",
+    "name": "Nebula Watch",
+    "price": 349,
+    "category": "Wearables"
+  },
+  {
+    "id": "p3",
+    "name": "Stellar Pods",
+    "price": 129,
+    "category": "Audio"
+  },
+  {
+    "id": "p4",
+    "name": "Photon Camera",
+    "price": 1099,
+    "category": "Cameras"
+  },
+  {
+    "id": "p5",
+    "name": "Orbit Laptop",
+    "price": 1499,
+    "category": "Computers"
+  },
+  {
+    "id": "p6",
+    "name": "Cosmic Keyboard",
+    "price": 99,
+    "category": "Accessories"
+  }
+]
