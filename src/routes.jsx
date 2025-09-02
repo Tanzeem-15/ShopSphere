@@ -4,7 +4,6 @@ import { AuthProvider } from './auth/AuthContext.jsx'
 import { CartProvider } from './cart/CartContext.jsx'
 import RootLayout from './pages/RootLayout.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
-
 import { productsLoader } from './pages/Products.jsx'
 import { productDetailLoader } from './pages/ProductDetail.jsx'
 
@@ -21,9 +20,7 @@ const Settings = lazy(() => import('./pages/Settings.jsx'))
 const Login = lazy(() => import('./pages/Login.jsx'))
 const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 
-const withSuspense = (el) => (
-  <Suspense fallback={<p className="muted">Loading…</p>}>{el}</Suspense>
-)
+const withSuspense = (el) => <Suspense fallback={<p className="muted">Loading…</p>}>{el}</Suspense>
 
 const router = createBrowserRouter(
   [
@@ -45,7 +42,7 @@ const router = createBrowserRouter(
         {
           path: 'checkout',
           element: <ProtectedRoute>{withSuspense(<Checkout />)}</ProtectedRoute>,
-          handle: { breadcrumb: 'Checkout' }
+          handle: { breadcrumb: 'Checkout' },
         },
         {
           path: 'dashboard',
@@ -55,16 +52,16 @@ const router = createBrowserRouter(
             { index: true, element: withSuspense(<Overview />), handle: { breadcrumb: 'Overview' } },
             { path: 'overview', element: withSuspense(<Overview />), handle: { breadcrumb: 'Overview' } },
             { path: 'orders', element: withSuspense(<Orders />), handle: { breadcrumb: 'Orders' } },
-            { path: 'settings', element: withSuspense(<Settings />), handle: { breadcrumb: 'Settings' } }
-          ]
+            { path: 'settings', element: withSuspense(<Settings />), handle: { breadcrumb: 'Settings' } },
+          ],
         },
         { path: 'login', element: withSuspense(<Login />), handle: { breadcrumb: 'Login' } },
-        { path: '*', element: withSuspense(<NotFound />) }
-      ]
-    }
+        { path: '*', element: withSuspense(<NotFound />) },
+      ],
+    },
   ],
   {
-    basename: import.meta.env.BASE_URL
+    basename: import.meta.env.BASE_URL,
   }
 )
 
